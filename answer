@@ -1,0 +1,11 @@
+#!/bin/sh
+
+document=$1
+question=$2
+topDir=$PWD
+
+cd AnsweringSystem
+python InfoRetrieval.py $topDir/$question $topDir/$document
+python AnsweringMachine.py $topDir/$question ChosenSentences.txt
+rm -f ChosenSentence.txt
+cd ..
